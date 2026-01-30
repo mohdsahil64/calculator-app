@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont,
+    "SF Pro Display", "Helvetica Neue", sans-serif;
+}
+
+/* FULL SCREEN */
+.app {
+  min-height: 100svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+}
+
+/* CALCULATOR BODY */
+.calculator {
+  width: 320px;
+  background: #000;
+  padding: 20px;
+}
+
+/* DISPLAY */
+.display {
+  height: 120px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 10px;
+}
+
+.display span {
+  color: #fff;
+  font-size: 3.5rem;
+  font-weight: 300;
+  word-break: break-all;
+}
+
+/* BUTTON GRID */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+/* BUTTON BASE */
+.btn {
+  height: 68px;
+  border-radius: 50%;
+  border: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+  background: #333;
+  color: #fff;
+  transition: filter 0.15s;
+}
+
+/* PRESS EFFECT */
+.btn:active {
+  filter: brightness(1.4);
+}
+
+/* TOP ROW (C, +/- , %) */
+.btn:nth-child(-n + 3) {
+  background: #a5a5a5;
+  color: #000;
+}
+
+/* OPERATORS (÷ × - + =) */
+.btn:nth-child(4n) {
+  background: #ff9f0a;
+  color: #fff;
+}
+
+/* ZERO BUTTON */
+.btn:nth-child(17) {
+  grid-column: span 2;
+  border-radius: 34px;
+  text-align: left;
+  padding-left: 26px;
+}
