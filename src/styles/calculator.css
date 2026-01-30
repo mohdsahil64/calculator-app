@@ -6,7 +6,7 @@
     "SF Pro Display", "Helvetica Neue", sans-serif;
 }
 
-/* FULL SCREEN */
+/* FULL SCREEN PHONE */
 .app {
   min-height: 100svh;
   display: flex;
@@ -33,7 +33,7 @@
 
 .display span {
   color: #fff;
-  font-size: 3.5rem;
+  font-size: 3.6rem;
   font-weight: 300;
   word-break: break-all;
 }
@@ -45,7 +45,7 @@
   gap: 12px;
 }
 
-/* BUTTON BASE */
+/* BUTTON */
 .btn {
   height: 68px;
   border-radius: 50%;
@@ -54,30 +54,214 @@
   cursor: pointer;
   background: #333;
   color: #fff;
-  transition: filter 0.15s;
 }
 
-/* PRESS EFFECT */
 .btn:active {
   filter: brightness(1.4);
 }
 
-/* TOP ROW (C, +/- , %) */
+/* TOP ROW */
 .btn:nth-child(-n + 3) {
   background: #a5a5a5;
   color: #000;
 }
 
-/* OPERATORS (÷ × - + =) */
+/* OPERATORS */
 .btn:nth-child(4n) {
   background: #ff9f0a;
   color: #fff;
 }
 
-/* ZERO BUTTON */
+/* ZERO */
 .btn:nth-child(17) {
   grid-column: span 2;
   border-radius: 34px;
   text-align: left;
   padding-left: 26px;
+}
+/* ❤️ LOVE OVERLAY */
+.love-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* LOVE BOX */
+.love-box {
+  background: #111;
+  border-radius: 20px;
+  padding: 26px;
+  max-width: 300px;
+  text-align: center;
+  color: #fff;
+  animation: lovePop 0.6s ease;
+}
+
+.love-box h2 {
+  margin-bottom: 12px;
+  color: #ff4d6d;
+}
+
+.love-box p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.love-box span {
+  font-size: 0.85rem;
+  color: #aaa;
+}
+
+/* POP ANIMATION */
+@keyframes lovePop {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont,
+    "SF Pro Display", "Helvetica Neue", sans-serif;
+}
+
+/* FULL SCREEN */
+.app {
+  min-height: 100svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+}
+
+/* CALCULATOR */
+.calculator {
+  width: 320px;
+  background: #000;
+  padding: 20px;
+}
+
+/* DISPLAY */
+.display {
+  height: 120px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 10px;
+}
+
+.display span {
+  color: #fff;
+  font-size: 3.6rem;
+  font-weight: 300;
+}
+
+/* BUTTON GRID */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+/* BUTTON */
+.btn {
+  height: 68px;
+  border-radius: 50%;
+  border: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+  background: #333;
+  color: #fff;
+}
+
+.btn:active {
+  filter: brightness(1.4);
+}
+
+/* TOP ROW */
+.btn:nth-child(-n + 3) {
+  background: #a5a5a5;
+  color: #000;
+}
+
+/* OPERATORS */
+.btn:nth-child(4n) {
+  background: #ff9f0a;
+  color: #fff;
+}
+
+/* ZERO */
+.btn:nth-child(17) {
+  grid-column: span 2;
+  border-radius: 34px;
+  text-align: left;
+  padding-left: 26px;
+}
+
+/* ❤️ OVERLAY */
+.love-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* ❤️ BOX */
+.love-box {
+  background: #111;
+  border-radius: 20px;
+  padding: 24px;
+  max-width: 300px;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  animation: pop 0.4s ease;
+}
+
+.love-box h2 {
+  color: #ff4d6d;
+  margin-bottom: 10px;
+}
+
+.love-box p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.love-box span {
+  display: block;
+  margin-top: 10px;
+  color: #aaa;
+}
+
+/* CLOSE */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* ANIMATION */
+@keyframes pop {
+  from { transform: scale(0.6); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
 }

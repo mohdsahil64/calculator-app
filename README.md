@@ -1,16 +1,78 @@
-# React + Vite
+# iOS Calculator Clone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A pixel-perfect clone of the Apple iOS Calculator app built with React and Vite.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ✅ Exact iOS Calculator UI (colors, spacing, fonts, button shapes)
+- ✅ Portrait mode (standard calculator)
+- ✅ Landscape mode (scientific calculator)
+- ✅ Basic operations: +, −, ×, ÷
+- ✅ Functions: C, +/−, %
+- ✅ Scientific functions: sin, cos, tan, log, √, π, e, ^
+- ✅ Decimal support
+- ✅ Calculation history (last 5 calculations)
+- ✅ Button press feedback
+- ✅ Mobile-optimized (100svh, WebView compatible)
+- ✅ No external UI libraries
 
-## React Compiler
+## Installation
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm install
+```
 
-## Expanding the ESLint configuration
+## Development
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm run dev
+```
+
+## Build
+
+```bash
+npm run build
+```
+
+## Preview Production Build
+
+```bash
+npm run preview
+```
+
+## Project Structure
+
+```
+ios-calculator/
+├── src/
+│   ├── components/
+│   │   ├── Calculator.jsx
+│   │   ├── calculator.css
+│   │   ├── Button.jsx
+│   │   └── Button.css
+│   ├── App.jsx
+│   ├── App.css
+│   ├── main.jsx
+│   └── index.css
+├── index.html
+├── package.json
+└── vite.config.js
+```
+
+## Deployment
+
+The app is ready to be deployed to any static hosting service or packaged as a mobile app using Capacitor.
+
+## Mobile App (Capacitor)
+
+To convert to a native app:
+
+```bash
+npm install @capacitor/core @capacitor/cli
+npx cap init
+npx cap add android
+npx cap add ios
+npm run build
+npx cap sync
+npx cap open android
+```
